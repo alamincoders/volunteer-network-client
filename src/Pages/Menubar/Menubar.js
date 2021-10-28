@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logos/Group 1329.png";
-import Banner from "../Banner/Banner";
+
 import "./Menubar.css";
 
 const Menubar = () => {
@@ -29,29 +29,19 @@ const Menubar = () => {
               <NavLink className="text-decoration-none text-dark fs-5 me-5" to="/blog">
                 Blog
               </NavLink>
-              <button className="btn btn-custom-primary px-4 me-3">
-                {" "}
-                <NavLink className="text-decoration-none text-white fs-5" to="/register">
-                  Register
-                </NavLink>
-              </button>
-              <button className="btn btn-info px-4 me-3">
-                {" "}
-                <NavLink className="text-decoration-none text-white fs-5" to="/login">
-                  Login
-                </NavLink>
-              </button>
-              <button className="btn btn-custom-dark px-4 me-3">
-                {" "}
-                <NavLink className="text-decoration-none text-white fs-5" to="/admin">
-                  Admin
-                </NavLink>
-              </button>
+              <NavLink className="text-decoration-none  fs-5" to="/login">
+                <button className="btn btn-info px-4 text-white me-3"> Login</button>
+              </NavLink>
+              <NavLink className="text-decoration-none  fs-5" to="/register">
+                <button className="btn btn-custom-primary text-white px-4 me-3"> Register</button>
+              </NavLink>
+              <NavLink className="text-decoration-none  fs-5" to="/admin">
+                <button className="btn btn-custom-dark text-white px-4 me-3"> Admin</button>
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Banner></Banner>
     </div>
   );
 };

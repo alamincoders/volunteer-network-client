@@ -1,0 +1,22 @@
+.login form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 130px;
+  width: 100%;
+}
+
+.login form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .login {
+    flex-direction: column-reverse;
+    padding-bottom: 50px;
+  }
+  .login form {
+    margin-top: 0;
+  }
+}

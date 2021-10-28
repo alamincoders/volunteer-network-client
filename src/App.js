@@ -3,6 +3,8 @@ import "./App.css";
 import Events from "./Pages/Events/Events";
 import Home from "./Pages/Home/Home";
 import Menubar from "./Pages/Menubar/Menubar";
+import Login from "./Shared/Login/Login";
+import Register from "./Shared/Register/Register";
 
 function App() {
   return (
@@ -21,6 +23,12 @@ function App() {
           </Route>{" "}
           <Route path="/home">
             <Events></Events>
+          </Route>{" "}
+          <Route path="/register">
+            <Register></Register>
+          </Route>{" "}
+          <Route path="/login">
+            <Login></Login>
           </Route>
         </Switch>
       </Router>

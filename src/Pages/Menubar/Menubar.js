@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+
 import logo from "../../images/logos/Group 1329.png";
 
 import "./Menubar.css";
@@ -8,7 +9,7 @@ import "./Menubar.css";
 const Menubar = () => {
   return (
     <div>
-      <Navbar sticky="top" bg="light" collapseOnSelect expand="lg" className="pt-5" variant="light">
+      <Navbar fixed="top" bg="light" collapseOnSelect expand="lg" className="pt-5" variant="light">
         <Container>
           <Navbar.Brand className="text-dark">
             <img className="img-fluid " src={logo} alt="" style={{ width: "200px" }} />
@@ -34,9 +35,6 @@ const Menubar = () => {
               </NavLink>
               <NavLink className="text-decoration-none  fs-5" to="/register">
                 <button className="btn btn-custom-primary text-white px-4 me-3"> Register</button>
-              </NavLink>
-              <NavLink className="text-decoration-none  fs-5" to="/admin">
-                <button className="btn btn-custom-dark text-white px-4 me-3"> Admin</button>
               </NavLink>
             </Nav>
           </Navbar.Collapse>

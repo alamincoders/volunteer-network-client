@@ -1,21 +1,23 @@
 import initializeAuthentication from "../Firebase/Firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-initializeAuthentication();
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { useState } from "react";
 
+initializeAuthentication();
+const auth = getAuth();
 const useFirebase = () => {
-  const auth = getAuth();
+  const [user, setUser] = useState("");
+  const googleProvider = new GoogleAuthProvider();
   const signInGoogle = () => {
-    const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider)
       .then((result) => {
-        console.log(result);
+        setUser(result.user);
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
+      .catch((err) => console.log(err.message));
   };
-
-  return signInGoogle;
+  return {
+    signInGoogle,
+    user,
+  };
 };
 
 export default useFirebase;

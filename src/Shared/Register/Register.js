@@ -5,11 +5,12 @@ import registerLogo from "../../images/logos/register.svg";
 import useFirebase from "../../hooks/useFirebase";
 
 const Register = () => {
-  const { signInGoogle } = useFirebase();
+  const { signInGoogle, user } = useFirebase();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
     <div className="register container mt-5 mx-auto row">
+      <p className="lead">{user.displayName}</p>
       <div className="col-md-5">
         <form onSubmit={handleSubmit(onSubmit)}>
           <input placeholder="Name" type="text" {...register("name", { required: true, maxLength: 20 })} />

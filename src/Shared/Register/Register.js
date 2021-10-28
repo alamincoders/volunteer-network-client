@@ -3,11 +3,15 @@ import { useForm } from "react-hook-form";
 import "./Register.css";
 import registerLogo from "../../images/logos/register.svg";
 import useFirebase from "../../hooks/useFirebase";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const { signInGoogle, user } = useFirebase();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  //
+
   return (
     <div className="register container mt-5 mx-auto row">
       <p className="lead">{user.displayName}</p>
@@ -19,7 +23,9 @@ const Register = () => {
           <input type="submit" />
         </form>
         <p className="">
-          <input type="checkbox" /> <span>Already Registered?</span>
+          <Link className="text-decoration-none text-dark" to="/login">
+            <input type="checkbox" /> <span className="text-primary">Already Registered?</span>
+          </Link>
         </p>
         <p className=" text-center my-5 fs-4">--------------- OR ----------------</p>
         <div className="text-center">
